@@ -7,6 +7,7 @@ def get_all(cwd):
     for i in get_dir:
         sub_dir = os.path.join(cwd, i)  # 把第一步获取的文件加入路径
         if os.path.isdir(sub_dir):  # 如果当前仍然是文件夹，递归调用
+            print("sub dir: "+sub_dir)
             get_all(sub_dir)
         else:
             ax = os.path.basename(sub_dir)  # 如果当前路径不是文件夹，则把文件名放入列表
