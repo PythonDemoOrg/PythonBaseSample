@@ -64,9 +64,9 @@ print("begin")
 for i in range(len(appNames)):
     if i != 0:
         # 替换Config配置文件下的代码内容
-        replaceText(r'/Users/smartzheng/AndroidStudioProjects/MyApplication/app/src/main/java/com/smartzheng/Config.java',replaceText[i - 1],replaceText[i])
+        replaceText(r'/Users/smartzheng/AndroidStudioProjects/MyApplication/app/src/main/java/com/smartzheng/Config.java',replaceText[i-1],replaceText[i])
         #替换app名字
-        replaceText(r'/Users/smartzheng/AndroidStudioProjects/MyApplication/app/src/main/res/values/strings.xml', appNames[i - 1],appNames[i])
+        replaceText(r'/Users/smartzheng/AndroidStudioProjects/MyApplication/app/src/main/res/values/strings.xml', appNames[i-1],appNames[i])
         #替換applicationId,即替换包名
         replaceText(r'/Users/smartzheng/AndroidStudioProjects/MyApplication/app/build.gradle',appIds[i-1],appIds[i])
         #替换输出的路径
