@@ -1,3 +1,8 @@
+# -*- coding: UTF-8 -*-
+
+# Filename : lenovo_test_case.py
+# author by : WeiQi
+
 import subprocess, time, os
 
 CASE_LIST=[

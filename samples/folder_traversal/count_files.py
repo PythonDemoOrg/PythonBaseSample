@@ -1,3 +1,8 @@
+# -*- coding: UTF-8 -*-
+
+# Filename : count_files.py
+# author by : WeiQi
+
 import os
 
 result = []

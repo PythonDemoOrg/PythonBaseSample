@@ -1,6 +1,7 @@
-#! python3
-# 替换代码和文件
-import os
+# -*- coding: UTF-8 -*-
+
+# Filename : auto_apk_release.py
+# author by : WeiQi
 
 appNames = ["联营达", "易企订", "佐邻订货", "优厨帮", "蓉城易购", "创康良品", "淘广材", "烁客", "成铁生活", "新东日建材"]
 appIds = ["LYD", "YQD", "ZL", "YCB", "RCYG", "CKLP", "TGC", "SK", "CTSH", "XDRJC"]
@@ -8,7 +9,6 @@ apkNames = ["lianyingda.cn", "yidianlife.com", "zoli.vip", "168ycb.com", "028rcy
             "svlok.com", "ctshgs168.com", "newdongri.com"]
 targetDir = "H:\\WORK_DHB_STUDIO\\Android\\Code\\DHB\\dHB\\src\\main\\res"
 sourceDir = "H:\\custom_app_img\\"
-
 
 # 拷贝文件
 def copyFiles(sourceDir, targetDir):
@@ -57,7 +57,6 @@ def replaceText(f_path, text1, text2):
         w.write(replace)
     r.close()
     w.close()
-
 
 print("begin")
 # 循环执行打包操作

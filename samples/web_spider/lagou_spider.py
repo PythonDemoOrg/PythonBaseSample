@@ -1,3 +1,8 @@
+# -*- coding: UTF-8 -*-
+
+# Filename : lagou_spider.py
+# author by : WeiQi
+
 import requests
 from openpyxl import Workbook
 

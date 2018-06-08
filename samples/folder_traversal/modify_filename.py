@@ -1,4 +1,10 @@
+# -*- coding: UTF-8 -*-
+
+# Filename : modify_filename.py
+# author by : WeiQi
+
 import os
+
 dir = os.getcwd()
 subdir = os.listdir(dir)
 for i in subdir:

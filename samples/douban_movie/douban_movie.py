@@ -1,10 +1,14 @@
-#!/usr/bin/env python
-# encoding=utf-8
+# -*- coding: UTF-8 -*-
+
+# Filename : douban_movie.py
+# author by : WeiQi
+
 import requests
 import re
 import codecs
 from bs4 import BeautifulSoup
 from openpyxl import Workbook
+
 wb = Workbook()
 dest_filename = './douban_movie/电影.xlsx'
 ws1 = wb.active

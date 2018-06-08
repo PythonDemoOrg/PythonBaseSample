@@ -1,6 +1,12 @@
+# -*- coding: UTF-8 -*-
+
+# Filename : biying_spider.py
+# author by : WeiQi
+
 import requests
 import re
 import time
+
 local = time.strftime("%Y.%m.%d")
 url = 'https://cn.bing.com/'
 con = requests.get(url)

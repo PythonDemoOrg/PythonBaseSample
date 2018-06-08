@@ -1,5 +1,7 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+# -*- coding: UTF-8 -*-
+
+# Filename : login_zhihu.py
+# author by : WeiQi
 
 __author__ = 'zkqiang'
 __zhihu__ = 'https://www.zhihu.com/people/z-kqiang'

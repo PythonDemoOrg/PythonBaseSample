@@ -1,3 +1,8 @@
+# -*- coding: UTF-8 -*-
+
+# Filename : block_chain.py
+# author by : WeiQi
+
 import hashlib
 import json
 from time import time

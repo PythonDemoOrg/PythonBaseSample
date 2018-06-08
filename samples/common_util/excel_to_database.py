@@ -1,5 +1,11 @@
+# -*- coding: UTF-8 -*-
+
+# Filename : excel_to_database.py
+# author by : WeiQi
+
 from openpyxl import load_workbook
 import pymysql
+
 config = {
 	'host': '127.0.0.1',
 	'port':3306,

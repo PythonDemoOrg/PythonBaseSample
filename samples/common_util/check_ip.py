@@ -1,5 +1,7 @@
-#!/usr/bin/python
-# coding:utf-8
+# -*- coding: UTF-8 -*-
+
+# Filename : check_ip.py
+# author by : WeiQi
 
 import urllib
 import re
