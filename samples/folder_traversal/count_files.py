@@ -22,5 +22,5 @@ def get_all(cwd):
 
 if __name__ == "__main__":
     cur_path = os.getcwd()  # 当前目录
-    cur_path = "/Users/huangweiqi/PycharmProjects/PythonBaseSample/python2_samples"
+    cur_path = "/Users/huangweiqi/PycharmProjects/PythonBaseSample/"
     get_all(cur_path)
