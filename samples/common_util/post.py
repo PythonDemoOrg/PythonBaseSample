@@ -17,7 +17,7 @@ req.add_header('Cookie','JSESSIONID=WLcxXhnX29wcGMLDyCWjFykWckjhdpWQKTbhhBdRLpqs
 req.add_header('Referer','http://jinanzy.sdcourt.gov.cn/sdfy_search/bzxr/xzbzxList.do')
 req.add_header('Content-Length','32')
 resp = urllib2.urlopen(req)
-print resp.read()
+print (resp.read())
 
 # enable cookie
 # cj = cookielib.CookieJar()

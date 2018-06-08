@@ -13,7 +13,7 @@ def URL(ip):
     fip = uip.read()
     rip = re.compile(r"<br/><b>查询结果：(.*)</b><br/>")
     result = rip.findall(fip)
-    print "%s\t %s" % (ip, result[0])
+    print ("%s\t %s" % (ip, result[0]))
 
 def DO(domain):
     url = urllib.urlopen('http://wap.ip138.com/ip.asp?ip=%s' % domain)
@@ -22,11 +22,11 @@ def DO(domain):
     result = r.findall(f)
     # print type(result)
     for i in result:
-        print "%s\t %s\t %s\t" % (domain, i[0], i[1])
+        print ("%s\t %s\t %s\t" % (domain, i[0], i[1]))
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print "请输入IP地址或者域名 (例如:192.168.1.1 / www.baidu.com)"
+        print ("请输入IP地址或者域名 (例如:192.168.1.1 / www.baidu.com)")
         sys.exit()
     INPUT = sys.argv[1]
     if not re.findall('(\d{1,3}\.){3}\d{1,3}', INPUT):
@@ -34,10 +34,10 @@ if __name__ == "__main__":
             DOMAIN = INPUT
             DO(DOMAIN)
         else:
-            print "输入的IP地址和域名格式不对！"
+            print ("输入的IP地址和域名格式不对！")
     else:
         if ISIP(INPUT):
             IPADDRESS = INPUT
             URL(IPADDRESS)
         else:
-            print "IP 地址不合法，请重新输入！"
+            print ("IP 地址不合法，请重新输入！")

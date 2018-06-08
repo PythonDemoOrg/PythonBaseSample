@@ -20,30 +20,30 @@ APK_LIST=[
 def test_case():
 	for pkg in PKG_LIST:
 		out = run_cmd('adb uninstall '+pkg)
-		print 'Uninstall '+pkg+' '+out
+		print ('Uninstall '+pkg+' '+out)
 		
 	for apk in APK_LIST:
 		out = run_cmd('adb install C:/Users/a/Desktop/'+apk)
-		print 'Installing apk '+apk+'\n'+out
+		print ('Installing apk '+apk+'\n'+out)
 			
 	out = run_cmd('adb root')
 	if out.find('adbd is already running as root')<0: 
-		print out
+		print (out)
 		time.sleep(10)
 	
 	out = run_cmd('adb remount')
 	if out.find('remount succeeded')<0:
 		raise Exception('adb remount error : %s' %out)
 	
-	print 'Test START.\n'
+	print ('Test START.\n')
 	count = 1
 	for case in CASE_LIST:
-		print 'Testing case'+str(count)+': '+case
+		print ('Testing case'+str(count)+': '+case)
 		count+=1
 		out = run_cmd('adb shell am instrument -e class '+case+' -w com.lenovo.lsf.device.test/android.test.InstrumentationTestRunner')
-		print out
+		print (out)
 		
-	print 'Test END.'
+	print ("Test END.")
 	os.system("pause")
 	
 #The run command method
