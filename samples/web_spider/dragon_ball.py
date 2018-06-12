@@ -38,8 +38,8 @@ def gain(url):  # 获取网页指定内容
     links = get_link(soup)  # 获取<a href= ? 内容
     return links
 
-def getTideForecast():
-    url = 'https://www.tide-forecast.com/countries/China'
+def getTideForecast(country):
+    url = 'https://www.tide-forecast.com/countries/'+country
     Web_Link = gain(url)
     for Link in range(len(Web_Link)):
         Link_Add = Web_Link[Link]
@@ -48,22 +48,27 @@ def getTideForecast():
         Link_Address = (Link_Address + '.js')
         url_Tide = 'https://www.tide-forecast.com/tides/'
         connet = urljoin(url_Tide, Link_Address)  # 拼接网址路径
-        file = os.path.join('./TideData/China' + "/")  # 拼接绝对路径
+        file = os.path.join('./TideData/'+ country + "/")  # 拼接绝对路径
         mkdir_p(file)
         print(connet)
         if os.path.isfile(file):
             print('文件已存在')
         else:
-            start = datetime.datetime.now().replace(microsecond=0)  # 计时工具
-            url = connet
-            wp = urllib.request.urlopen(url)  # 打开数据网页数据
-            content = wp.read()
-            fp = open(file + Link_Address, "wb")  # 写入指定文件夹
-            fp.write(content)  # 写入数据
-            fp.close()  # 关闭文件
-            end = datetime.datetime.now().replace(microsecond=0)
-            print("用时: ", end='')
-            print(end - start)
+            try:
+                start = datetime.datetime.now().replace(microsecond=0)  # 计时工具
+                url = connet
+                wp = urllib.request.urlopen(url)  # 打开数据网页数据
+                content = wp.read()
+                fp = open(file + Link_Address, "wb")  # 写入指定文件夹
+                fp.write(content)  # 写入数据
+                fp.close()  # 关闭文件
+                end = datetime.datetime.now().replace(microsecond=0)
+                print("用时: ", end='')
+                print(end - start)
+            except Exception as err:
+                print(err)
+            #finally:
+            #    print("Goodbye!")
 
 def getDragonBall():
     url = 'http://comic.dragonballcn.com/list/0.Dragon_Ball-buyao_daolian_ya/1.jp_original/01/DB01*.jpg'
@@ -92,6 +97,11 @@ def getDragonBall():
             print("用时: ", end='')
             print(end - start)
 
+def getCountry(url):
+    print()
+
 if __name__ == '__main__':
-    # getTideForecast()
-    getDragonBall()
+    country = ['Cuba', 'China', 'Japan', 'Singapore', 'Bahrain', 'Kuwait', 'South Korea', 'Bangladesh', 'Malaysia', 'Sri Lanka']
+    for str in country:
+        getTideForecast(str)
+    # getDragonBall()
