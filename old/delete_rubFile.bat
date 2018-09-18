@@ -1,0 +1,2 @@
+python delete_rubFile.py
+pause
